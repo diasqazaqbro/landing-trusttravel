@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hudos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    @vue:mounted="store.fetchData"
+    v-scope
+    :class="['relative bg-bgc text-main selection:bg-accent selection:text-white', store.isModalOpen ? 'overflow-hidden' : '']"
+  >
+    <!-- loader -->
+    <div
+      data-loader
+      class="fixed left-0 top-0 z-[999] flex h-full w-full items-center justify-center bg-bgc"
+    >
+      <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <!-- Start Header -->
+    <header class="absolute left-0 right-0 top-0 z-10 h-[100px] md:h-[180px]">
+      <div
+        class="container relative flex h-full items-center justify-between md-m:max-w-full"
+      >
+        <a
+          href="tel:{{store.fetchResult.settings.number}}"
+          class="group flex items-center space-x-2 transition-colors hover:underline"
+        >
+          <img class="md-m:h-6 md-m:w-6" src="./image/phone.svg" alt="phone" />
+          <span class="md-m:hidden">{{store.fetchResult.settings.number}}</span>
+        </a>
+        <a href="/" class="absolute left-1/2 w-20 shrink-0 -translate-x-1/2">
+          <img :src="store.fetchResult.images.i19" alt="logo" />
+        </a>
+        <a
+          data-mobile-open
+          href="#"
+          class="absolute right-4 top-[18px] h-16 w-16 md:hidden"
+        >
+          <span
+            class="absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 -translate-y-1/2 bg-main"
+          ></span
+          ><span
+            class="absolute left-1/2 top-[calc(50%-7px)] h-px w-6 -translate-x-1/2 -translate-y-1/2 bg-main"
+          ></span
+          ><span
+            class="absolute left-1/2 top-[calc(50%+7px)] h-px w-6 -translate-x-1/2 -translate-y-1/2 bg-main"
+          ></span>
+        </a>
+      </div>
+      <div
+        data-menu
+        class="fixed right-0 top-0 flex items-center transition-transform md-m:bottom-0 md-m:left-0 md-m:translate-x-full md-m:flex-col md-m:justify-center md-m:space-y-7 md-m:bg-white md-m:opacity-0 md:absolute md:h-full md:space-x-7"
+      >
+        <a
+          href="#"
+          data-mobile-close
+          class="absolute right-4 top-[18px] h-16 w-16 md:hidden"
+        >
+          <span
+            class="absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-main"
+          ></span
+          ><span
+            class="absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-main"
+          ></span>
+        </a>
+        <a href="price.html" class="transition-colors hover:text-accent">
+          Цены
+        </a>
+        <a href="portfolio.html" class="transition-colors hover:text-accent">
+          Портфолио
+        </a>
+        <a
+          href="tel:+77778092516"
+          class="group flex items-center space-x-2 hover:underline md:hidden"
+        >
+          <img src="./image/phone.svg" alt="phone" />
+          <span>+7 (777) 8092516</span>
+        </a>
+        <button
+          @click="store.showModal(false)"
+          class="bg-accent transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken md-m:h-[90px] md-m:w-auto md-m:px-6 md:h-full md:w-32 md:leading-none lg:w-[18.63rem]"
+        >
+          Заказать проект
+        </button>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Main -->
+    <main>
+      <section
+        data-anim-container="stager"
+        class="pb-[100px] pt-[120px] md:pb-[140px] md:pt-[220px]"
+      >
+        <div class="container">
+          <h2 data-anim class="mb-[60px] text-center font-bold">
+            Наши проекты
+          </h2>
+          <div class="relative">
+            <div class="grid grid-cols-1 gap-[60px] lg:grid-cols-2 lg:gap-[100px]">
+              <div class="projects">
+                <img
+                  data-anim
+                  class="p__img h-full w-full"
+                  :src="store.fetchResult.images.i27"
+                  alt="benefits"
+                />
+                <div class="p__text">
+                  <h3 class="p__title">{{store.fetchResult.portfolio.oneTitle}}</h3>
+                  <h5 class="p__suptitle">{{store.fetchResult.portfolio.oneDesc}}</h5>
+                </div>
+              </div>
+              <div class="projects">
+                <img
+                  data-anim
+                  class="p__img h-full w-full"
+                  :src="store.fetchResult.images.i28"
+                  alt="benefits"
+                />
+                <div class="p__text">
+                  <h3 class="p__title">{{store.fetchResult.portfolio.twoTitle}}</h3>
+                  <h5 class="p__suptitle">{{store.fetchResult.portfolio.twoDesc}}</h5>
+                </div>
+              </div>
+              <div class="projects">
+                <img
+                  data-anim
+                  class="p__img h-full w-full"
+                  :src="store.fetchResult.images.i29"
+                  alt="benefits"
+                />
+                <div class="p__text">
+                  <h3 class="p__title">{{store.fetchResult.portfolio.threeTitle}}</h3>
+                  <h5 class="p__suptitle">{{store.fetchResult.portfolio.threeDesc}}</h5>
+                </div>
+              </div>
+              <div class="projects">
+                <img
+                  data-anim
+                  class="p__img h-full w-full"
+                  :src="store.fetchResult.images.i30"
+                  alt="benefits"
+                />
+                <div class="p__text">
+                  <h3 class="p__title">{{store.fetchResult.portfolio.fourTitle}}</h3>
+                  <h5 class="p__suptitle">{{store.fetchResult.portfolio.fourDesc}}</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-anim-container="stager"
+        class="relative bg-main pt-[190px] md-m:pb-3 md:py-[90px] md:pt-40"
+      >
+        <div class="container relative z-10 md:flex md:justify-between">
+          <div class="md-m:mb-5 md:max-w-[468px]">
+            <p data-anim class="mb-5 text-sm font-light text-white md:text-xl">
+              Акция на 3D проектирование
+            </p>
+            <h2 data-anim class="mb-5 text-white">
+              <span class="font-bold">Стройте сейчас,</span> <br />
+              Платите потом!
+            </h2>
+            <button
+              data-anim
+              @click="store.showModal(false)"
+              class="mb-5 w-full bg-accent p-4 transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken sm:w-64 md:mb-12"
+            >
+              Оставить контакт
+            </button>
+            <div
+              class="flex items-center md-m:-mr-4 md-m:space-x-10 md-m:overflow-x-auto md:grid md:max-w-[430px] md:grid-cols-3 md:gap-10"
+            >
+              <img
+                data-anim
+                class="md-m:w-36"
+                src="./image/sponsor-1.png"
+                alt="sponsor"
+              />
+              <img
+                data-anim
+                class="md-m:w-36"
+                src="./image/sponsor-2.png"
+                alt="sponsor"
+              />
+              <img
+                data-anim
+                class="md-m:w-20"
+                src="./image/sponsor-3.png"
+                alt="sponsor"
+              />
+            </div>
+          </div>
+          <div data-anim class="md-m:text-center md:self-end">
+            <span class="text-xs text-gray"
+              >*Только для граждан Казахстана</span
+            >
+          </div>
+        </div>
+        <div
+          data-anim
+          class="absolute -top-7 right-0 w-[360px] overflow-hidden md-m:h-[190px] md:-top-20 lg:-top-10 lg:w-[450px] xl:w-[705px]"
+        >
+          <img
+            class="relative -right-4 w-full md-m:h-full"
+            src="./image/image-4.jpg"
+            alt="image"
+          />
+        </div>
+      </section>
+    </main>
+    <!-- End Main -->
+
+    <!-- Start Footer -->
+    <footer data-anim-container="stager" class="pt-20 lg:py-[130px]">
+      <div data-anim class="container relative">
+        <div
+          class="flex justify-between lg-m:mb-10 lg-m:flex-wrap lg-m:space-y-10 md-m:flex-col md-m:flex-nowrap lg:items-start"
+        >
+          <div class="shrink-0 lg-m:w-full">
+            <img :src="store.fetchResult.images.i19" alt="logo" />
+          </div>
+          <div class="md-m:mb-10">
+            <div class="mb-5 text-xl font-light text-gray md:mb-7">Ссылки</div>
+            <ul>
+              <li class="mb-5">
+                <a class="transition-colors hover:text-accent" href="#">
+                  Услуги
+                </a>
+              </li>
+              <li class="mb-5">
+                <a class="transition-colors hover:text-accent" href="#">
+                  Портфолио
+                </a>
+              </li>
+              <li class="mb-5">
+                <a class="transition-colors hover:text-accent" href="#">
+                  Полезная информация
+                </a>
+              </li>
+              <li class="mb-5">
+                <a class="transition-colors hover:text-accent" href="#">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a class="transition-colors hover:text-accent" href="#">
+                  Политика конфиденциальности
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="md-m:mb-10">
+            <div class="mb-5 text-xl font-light text-gray md:mb-7">
+              Для клиентов
+            </div>
+            <ul>
+              <li class="mb-5">
+                <a
+                  href="#"
+                  class="flex items-baseline transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img
+                      class="w-4"
+                      src="./image/location.svg"
+                      alt="location"
+                    />
+                  </div>
+                  <div>
+                    <div>{{store.fetchResult.footer.address}}</div>
+                    <p class="mt-2 text-gray">
+                      Время работы: {{store.fetchResult.footer.workTime}}<br />
+                      Выходные: {{store.fetchResult.footer.holiday}}
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="mb-5">
+                <a
+                  href="tel:{{store.fetchResult.footer.clientNumber}}"
+                  class="flex items-center transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img
+                      class="w-4"
+                      src="./image/phone-footer.svg"
+                      alt="phone"
+                    />
+                  </div>
+                  <div>
+                    <div>{{store.fetchResult.footer.clientNumber}}</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:{{store.fetchResult.footer.clientEmail}}"
+                  class="flex items-center transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img class="w-4" src="./image/mail.png" alt="mail" />
+                  </div>
+                  <div>
+                    <div>{{store.fetchResult.footer.clientEmail}}</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="relative">
+            <div class="mb-5 text-xl font-light text-gray md:mb-7">
+              Для партнеров
+            </div>
+            <ul>
+              <li class="mb-5">
+                <a
+                  href="tel:{{store.fetchResult.footer.partnerNumber}}"
+                  class="flex items-center transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img
+                      class="w-4"
+                      src="./image/phone-footer.svg"
+                      alt="phone"
+                    />
+                  </div>
+                  <div>
+                    <div>{{store.fetchResult.footer.partnerNumber}}</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:{{store.fetchResult.footer.partnerEmail}}"
+                  class="flex items-center transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img class="w-4" src="./image/mail.png" alt="mail" />
+                  </div>
+                  <div>
+                    <div>{{store.fetchResult.footer.partnerEmail}}</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <button
+              @click="store.showModal(false)"
+              class="absolute top-[calc(100%+32px)] hidden h-[230px] w-[218px] bg-accent transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken lg:block"
+            >
+              Заказать проект
+            </button>
+          </div>
+        </div>
+        <div
+          class="text-gray lg-m:mb-3 lg-m:text-center lg:absolute lg:-bottom-24 lg:z-10"
+        >
+          Copyright © <br class="hidden lg:block" />
+          <span class="lg:text-xs"
+            >2023 Hudos Architects. All rights reserved.</span
+          >
+        </div>
+        <button
+          @click="store.showModal(false)"
+          class="h-[230px] w-[calc(100%+2rem)] bg-accent transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken sm-m:-mx-4 sm:w-full lg:absolute lg:-bottom-[130px] lg:right-0 lg:hidden lg:w-[218px]"
+        >
+          Заказать проект
+        </button>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Scroll up button -->
+    <a
+      href="#"
+      data-scroll-up
+      class="fixed bottom-10 right-5 -z-10 opacity-0 transition-opacity"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-12 w-12 fill-white stroke-accent"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    </a>
+
+    <!-- Start Modal 1 -->
+    <div
+      @click.self="store.closeModal"
+      :class="['animate-fade-in tall:pt-[30px] tall:!items-start fixed inset-0 left-0 top-0 z-50 h-full w-full justify-center overflow-auto bg-main bg-opacity-80 transition-opacity md:items-center md-m:items-end', store.isModalOpen ? 'flex' : 'hidden']"
+    >
+      <div
+        class="relative flex min-h-[620px] w-full animate-slide-in md-m:h-[calc(100vh-30px)] md:max-w-[500px] lg:max-w-[905px]"
+      >
+        <a
+          href="#"
+          @click.prevent="store.closeModal"
+          class="group absolute right-0 top-0 h-16 w-16"
+        >
+          <span
+            class="absolute left-1/2 top-1/2 h-px w-8 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-main opacity-60 transition-opacity group-hover:opacity-100"
+          ></span
+          ><span
+            class="absolute left-1/2 top-1/2 h-px w-8 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-main opacity-60 transition-opacity group-hover:opacity-100"
+          ></span>
+        </a>
+        <div class="relative flex w-1/2 items-end p-[50px] lg-m:hidden">
+          <div
+            class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 bg-[url('../image/image-1.jpg')] bg-cover bg-center bg-no-repeat brightness-50"
+          ></div>
+          <div
+            class="relative w-full text-[40px] font-bold uppercase leading-tight text-white"
+          >
+            Вы это <br />
+            сделали
+          </div>
+        </div>
+        <!-- Petite Vue  https://github.com/vuejs/petite-vue-->
+        <div
+          class="flex w-full flex-col justify-between bg-bgc sm-m:px-6 sm-m:py-[60px] sm:p-[50px] lg:w-1/2"
+        >
+          <div>
+            <!-- Step-1 -->
+            <div v-if="store.currentStep === store.getStep(1).value">
+              <h4 class="mb-7 text-2xl font-bold uppercase">
+                Какой Проект вам необходим?
+              </h4>
+              <ul class="mb-6">
+                <li
+                  v-for="({id, value, description }, index) in store.projectOptions"
+                  :class="{'mb-6':  index !== store.projectOptions.length - 1}"
+                >
+                  <label
+                    :for="id"
+                    class="group/label relative block cursor-pointer select-none pl-9 text-base sm:text-xl"
+                  >
+                    <input
+                      class="peer absolute cursor-pointer opacity-0"
+                      :id="id"
+                      type="radio"
+                      name="project"
+                      :value="value"
+                      v-model="store.form.project"
+                      @change="store.changeProject"
+                    />
+                    <span
+                      class="absolute left-0 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border border-gray bg-bgc after:absolute after:left-1/2 after:top-1/2 after:h-5 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main after:opacity-0 after:transition-all group-hover/label:border-main peer-checked:border-main peer-checked:after:opacity-100"
+                    ></span>
+                    <span
+                      class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
+                    >
+                      <span>{{value}}</span>
+                      <span class="group relative">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="inline h-6 w-6 text-gray transition-colors group-hover:text-accent"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+                          />
+                        </svg>
+                        <span
+                          class="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-40 -translate-x-1/2 rounded border border-accent bg-bgc px-4 py-[6px] text-center text-sm opacity-0 transition-opacity group-hover:opacity-100"
+                        >
+                          <span
+                            class="absolute -top-1 left-1/2 -z-10 h-2 w-2 -translate-x-1/2 rotate-45 rounded-sm border-l border-t border-accent bg-bgc"
+                          ></span>
+                          {{ description }}
+                        </span>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+              </ul>
+              <!-- Errors -->
+              <div class="my-2" v-if="store.isErrors">
+                <p class="text-[red]" v-for="{key, message} in store.errors">
+                  {{ message }}
+                </p>
+              </div>
+              <div>
+                <input
+                  class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none"
+                  type="text"
+                  placeholder="Другой"
+                  :value="store.anotherProject"
+                  @input.lazy="store.changeAnotherOption($event.target.value, 'project', 'anotherProject')"
+                />
+              </div>
+            </div>
+            <!-- Step-2 -->
+            <div v-if="store.currentStep === store.getStep(2).value">
+              <h4 class="mb-7 text-2xl font-bold uppercase">
+                Какой у вас город?
+              </h4>
+              <ul class="mb-6">
+                <li
+                  v-for="({id, value, description }, index) in store.cityOptions"
+                  :class="{'mb-6':  index !== store.cityOptions.length - 1}"
+                >
+                  <label
+                    :for="id"
+                    class="group/label relative block cursor-pointer select-none pl-9 text-base sm:text-xl"
+                  >
+                    <input
+                      class="peer absolute cursor-pointer opacity-0"
+                      :id="id"
+                      type="radio"
+                      name="project"
+                      :value="value"
+                      v-model="store.form.city"
+                      @change="store.changeCity"
+                    />
+                    <span
+                      class="absolute left-0 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border border-gray bg-bgc after:absolute after:left-1/2 after:top-1/2 after:h-5 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main after:opacity-0 after:transition-all group-hover/label:border-main peer-checked:border-main peer-checked:after:opacity-100"
+                    ></span>
+                    <span
+                      class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
+                    >
+                      <span>{{value}}</span>
+                      <span class="group relative">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="inline h-6 w-6 text-gray transition-colors group-hover:text-accent"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+                          />
+                        </svg>
+                        <span
+                          class="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-40 -translate-x-1/2 rounded border border-accent bg-bgc px-4 py-[6px] text-center text-sm opacity-0 transition-opacity group-hover:opacity-100"
+                        >
+                          <span
+                            class="absolute -top-1 left-1/2 -z-10 h-2 w-2 -translate-x-1/2 rotate-45 rounded-sm border-l border-t border-accent bg-bgc"
+                          ></span>
+                          {{ description }}
+                        </span>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+              </ul>
+              <!-- Errors -->
+              <div class="my-2" v-if="store.isErrors">
+                <p class="text-[red]" v-for="{key, message} in store.errors">
+                  {{ message }}
+                </p>
+              </div>
+              <div class="mb-16">
+                <input
+                  class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none"
+                  type="text"
+                  placeholder="Другой"
+                  :value="store.anotherCity"
+                  @input.lazy="store.changeAnotherOption($event.target.value, 'city', 'anotherCity')"
+                />
+              </div>
+              <div>
+                <div class="flex justify-between text-lg font-bold uppercase">
+                  <div>Площадь объекта?</div>
+                  <div>{{store.form.square}}м²</div>
+                </div>
+                <div class="mb-2">
+                  <input
+                    v-model="store.form.square"
+                    type="range"
+                    min="2"
+                    max="1000"
+                    value="100"
+                    class="h-1 w-full appearance-none bg-gray-light opacity-70 outline-none transition-opacity hover:opacity-100 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gray [&::-webkit-slider-thumb]:ring-4 [&::-webkit-slider-thumb]:ring-gray-light"
+                  />
+                </div>
+                <div class="flex justify-between font-light">
+                  <span>2м²</span>
+                  <span>1000м²</span>
+                </div>
+              </div>
+            </div>
+            <!-- Step-3 -->
+            <div v-if="store.currentStep === store.getStep(3).value">
+              <div class="mb-6">
+                <div class="mb-4">
+                  <input
+                    class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none"
+                    v-model.trim="store.form.name"
+                    type="text"
+                    placeholder="Ваше имя"
+                    @input="store.clearError"
+                  />
+                </div>
+                <div>
+                  <input
+                    class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+                    v-model="store.form.phone"
+                    type="number"
+                    placeholder="Номер телефона"
+                    @input="store.clearError"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="check"
+                  class="group/label relative block cursor-pointer pl-9"
+                >
+                  <input
+                    class="peer absolute cursor-pointer opacity-0"
+                    id="check"
+                    type="checkbox"
+                    v-model="store.check"
+                  />
+                  <span
+                    class="absolute left-px top-1 h-7 w-7 border border-accent after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:opacity-0 after:transition-all after:content-['\2713'] peer-checked:bg-accent peer-checked:after:opacity-100"
+                  ></span>
+                  <span
+                    class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
+                  >
+                    С положением об обработке персональных данных и Политикой
+                    конфеденциальности ознакомлен и согласен
+                  </span>
+                </label>
+              </div>
+              <!-- Errors -->
+              <div class="my-2" v-if="store.isErrors">
+                <p class="text-[red]" v-for="{key, message} in store.errors">
+                  {{ message }}
+                </p>
+              </div>
+            </div>
+            <!-- Step-4 -->
+            <div v-if="store.currentStep === store.getStep(4).value">
+              <h4 class="mb-7 text-2xl font-bold uppercase">
+                Спасибо за заявку!
+              </h4>
+              <p class="text-sm font-light">
+                Скоро с Вами свяжется наш менеджер.
+              </p>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div
+            class="flex space-x-1"
+            v-if="store.currentStep !== store.getStep(4).value"
+          >
+            <div
+              :class="['h-[52px] w-[52px]', value === store.currentStep ? 'flex-1' : '']"
+              v-for="{value} in store.steps.slice(0, 3)"
+              v-scope="Btn({ value })"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal 1 -->
+
+    <!-- Start Btn component -->
+    <template id="btn-template">
+      <button
+        @click="store.moveStep(value)"
+        :class="['flex items-center justify-center w-full h-full px-4 py-2 transition-all space-x-1 ', store.getStep(3).value === value &&  store.currentStep === value ? 'bg-main text-white disabled:opacity-30 hover:opacity-90': 'bg-accent disabled:opacity-50 hover:bg-accent-light active:bg-accent-darken']"
+        :disabled="store.currentStep < value || store.getStep(3).value === value && !store.check"
+      >
+        <template
+          v-if="store.currentStep === value && store.getStep(3).value !== value"
+        >
+          <span>Дальше</span>
+          <span>-></span>
+        </template>
+        <template
+          v-else-if="value === store.getStep(3).value && store.currentStep === value"
+        >
+          Отправить
+        </template>
+        <template v-else>{{value}}</template>
+      </button>
+    </template>
+
+    <!-- End Btn component -->
+    <script type="module" defer src="./main.js"></script>
+    <script>
+      export default {
+        computed: {
+          separatedParts() {
+            return store.fetchResult.price.oneSupTitle.split('.')
+          },
+        },
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1637 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hudos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/assets/main-2155a9d1.js"></script>
+    <link rel="stylesheet" href="/assets/main-b0597f68.css">
+  </head>
+  <body
+    v-scope
+    :class="['relative bg-bgc text-main selection:bg-accent selection:text-white', store.isModalOpen ? 'overflow-hidden' : '']"
+  >
+    <!-- loader -->
+    <div
+      data-loader
+      class="fixed left-0 top-0 z-[999] flex h-full w-full items-center justify-center bg-bgc"
+    >
+      <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!-- Start Header -->
+    <header class="absolute left-0 right-0 top-0 z-10 h-[100px] md:h-[180px]">
+      <div
+        class="container relative flex h-full items-center justify-between md-m:max-w-full"
+      >
+        <a
+          href="tel:+77778092516"
+          class="group flex items-center space-x-2 transition-colors hover:underline"
+        >
+          <img class="md-m:h-6 md-m:w-6" src="./image/phone.svg" alt="phone" />
+          <span class="md-m:hidden">+7 (777) 8092516</span>
+        </a>
+        <a href="/" class="absolute left-1/2 w-20 shrink-0 -translate-x-1/2">
+          <img src="./image/logo.svg" alt="logo" />
+        </a>
+        <a
+          data-mobile-open
+          href="#"
+          class="absolute right-4 top-[18px] h-16 w-16 md:hidden"
+        >
+          <span
+            class="absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 -translate-y-1/2 bg-main"
+          ></span
+          ><span
+            class="absolute left-1/2 top-[calc(50%-7px)] h-px w-6 -translate-x-1/2 -translate-y-1/2 bg-main"
+          ></span
+          ><span
+            class="absolute left-1/2 top-[calc(50%+7px)] h-px w-6 -translate-x-1/2 -translate-y-1/2 bg-main"
+          ></span>
+        </a>
+      </div>
+      <div
+        data-menu
+        class="fixed right-0 top-0 flex items-center transition-transform md-m:bottom-0 md-m:left-0 md-m:translate-x-full md-m:flex-col md-m:justify-center md-m:space-y-7 md-m:bg-white md-m:opacity-0 md:absolute md:h-full md:space-x-7"
+      >
+        <a
+          href="#"
+          data-mobile-close
+          class="absolute right-4 top-[18px] h-16 w-16 md:hidden"
+        >
+          <span
+            class="absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-main"
+          ></span
+          ><span
+            class="absolute left-1/2 top-1/2 h-px w-6 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-main"
+          ></span>
+        </a>
+        <a href="price.html" class="transition-colors hover:text-accent">
+          Цены
+        </a>
+        <a
+          href="tel:+77778092516"
+          class="group flex items-center space-x-2 hover:underline md:hidden"
+        >
+          <img src="./image/phone.svg" alt="phone" />
+          <span>+7 (777) 8092516</span>
+        </a>
+        <button
+          @click="store.showModal(false)"
+          class="bg-accent transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken md-m:h-[90px] md-m:w-auto md-m:px-6 md:h-full md:w-32 md:leading-none lg:w-[18.63rem]"
+        >
+          Заказать проект
+        </button>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Main -->
+    <main>
+      <section
+        id="scene-1"
+        data-anim-container="start-stager"
+        class="relative flex h-screen min-h-[820px] flex-col justify-between pt-[130px] text-center md:min-h-[1230px] md:pt-[250px] lg:min-h-[1420px] xl:min-h-[1500px]"
+      >
+        <div class="container">
+          <h1 class="mb-5 md:mb-7">
+            <span data-anim class="font-light">опытная команда</span> <br />
+            <span data-anim class="font-bold">архитекторов и дизайнеров</span>
+          </h1>
+          <p data-anim class="font-light md-m:text-xl">
+            Создаем непревзойденный дизайн <br class="md-m:hidden" />
+            отражающий ваш образ жизни.
+          </p>
+        </div>
+        <div>
+          <a
+            data-anim
+            href="#projects"
+            data-scroll
+            class="mb-7 inline-flex flex-col items-center sm:space-y-2"
+          >
+            <img
+              class="w-2 animate-slide-y"
+              src="./image/scroll-icon.svg"
+              alt="scroll"
+            />
+            <span class="text-xs text-gray sm-m:hidden">Прокрутите вниз</span>
+          </a>
+          <div
+            id="scroll-image"
+            data-anim
+            class="mx-auto md-m:h-[360px] md:max-w-[67.36%] 2xl:max-w-[1440px]"
+          >
+            <img
+              class="h-full w-full object-cover object-center"
+              src="./image/image-1.jpg"
+              alt="image"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="py-[80px] md:py-[130px]">
+        <div
+          class="container flex lg-m:flex-col lg:justify-between lg:space-x-10"
+        >
+          <div class="lg-m:mb-5 lg:w-[386px]">
+            <h2 class="md:text-4xl md:leading-snug">
+              <span class="font-bold">Успешно</span> <br />
+              <span>реализованных объектов</span>
+            </h2>
+            <div
+              data-counter="55"
+              class="text-[80px] font-bold leading-none lg:text-9xl lg:leading-tight"
+            >
+              55
+            </div>
+          </div>
+          <div
+            class="lg-m:flex lg-m:flex-col-reverse lg:w-full lg:max-w-[710px]"
+          >
+            <a
+              href="https://customerscanvas.com/help/designers-manual/adobe/photoshop/files/rich-text.psd"
+              class="group ml-auto flex w-full items-center justify-center space-x-1 border border-accent p-4 transition-colors hover:bg-accent hover:text-white lg:mb-20 lg:max-w-md"
+            >
+              <svg
+                class="h-6 w-6 fill-main transition-colors group-hover:fill-white"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M6.64453 9.35348L7.35164 8.64637L11.4981 12.7928L11.4981 4.99992C11.4981 4.72378 11.7219 4.49992 11.9981 4.49992C12.2742 4.49992 12.4981 4.72378 12.4981 4.99992L12.4981 12.7928L16.6445 8.64637L17.3516 9.35348L11.9981 14.707L6.64453 9.35348Z"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5.5 16V17C5.5 17.8284 6.17157 18.5 7 18.5L17 18.5C17.8284 18.5 18.5 17.8284 18.5 17V16H19.5V17C19.5 18.3807 18.3807 19.5 17 19.5L7 19.5C5.61929 19.5 4.5 18.3807 4.5 17V16H5.5Z"
+                />
+              </svg>
+              <span>Пример дизайн-проекта</span>
+            </a>
+            <ul
+              class="grid grid-cols-2 gap-5 lg-m:mb-5 md-m:grid-rows-2 md:grid-cols-3 xl:gap-24"
+            >
+              <li class="md-m:order-2">
+                <div class="text-xl font-light md:mb-5">
+                  В процессе <br />
+                  строительства
+                </div>
+                <div data-counter="3" class="text-5xl font-bold leading-tight">
+                  3
+                </div>
+              </li>
+              <li class="md-m:order-1">
+                <div class="text-xl font-light md:mb-5">
+                  Реализованных <br />
+                  объектов
+                </div>
+                <div data-counter="75" class="text-5xl font-bold leading-tight">
+                  75
+                </div>
+              </li>
+              <li class="md-m:order-3 md-m:w-full">
+                <div class="text-xl font-light md:mb-5">
+                  Встречи с <br class="md-m:hidden" />
+                  клиентами в год
+                </div>
+                <div
+                  data-counter="122"
+                  class="text-5xl font-bold leading-tight"
+                >
+                  122
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <div data-anim-container="fade-in" class="md-m:h-[360px]">
+        <img
+          data-anim
+          class="h-full w-full object-cover object-center"
+          src="./image/image-2.jpg"
+          alt="image"
+        />
+      </div>
+      <section
+        data-anim-container="stager"
+        class="relative overflow-hidden py-[80px] lg-m:flex lg-m:flex-col md:py-[130px] lg:min-h-[860px]"
+      >
+        <div class="container mb-10 lg-m:order-1 lg:mb-16">
+          <div class="lg:max-w-sm xl:max-w-lg">
+            <h2 data-anim class="mb-[30px] font-bold">
+              Последние <br />
+              проекты
+            </h2>
+            <div
+              class="flex xl-m:flex-col xl-m:space-y-6 xl:items-center xl:space-x-12"
+            >
+              <label
+                data-anim
+                class="group/label relative block cursor-pointer select-none pl-9 text-xl"
+              >
+                <input
+                  class="peer absolute cursor-pointer opacity-0"
+                  type="radio"
+                  checked="checked"
+                  name="slider-radio"
+                />
+                <span
+                  class="absolute left-0 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border border-gray bg-bgc after:absolute after:left-1/2 after:top-1/2 after:h-5 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main after:opacity-0 after:transition-all group-hover/label:border-main peer-checked:border-main peer-checked:after:opacity-100"
+                ></span>
+                <span
+                  class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
+                >
+                  Дизайн интерьера
+                </span>
+              </label>
+              <label
+                data-anim
+                class="group/label relative block cursor-pointer select-none pl-9 text-xl"
+              >
+                <input
+                  class="peer absolute cursor-pointer opacity-0"
+                  type="radio"
+                  name="slider-radio"
+                />
+                <span
+                  class="absolute left-0 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border border-gray bg-bgc after:absolute after:left-1/2 after:top-1/2 after:h-5 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main after:opacity-0 after:transition-all group-hover/label:border-main peer-checked:border-main peer-checked:after:opacity-100"
+                ></span>
+                <span
+                  class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
+                >
+                  Архитектура
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="container lg-m:order-3 lg-m:mt-10">
+          <div class="lg:max-w-sm xl:max-w-lg">
+            <ul data-control data-anim>
+              <li
+                class="group flex cursor-pointer items-center justify-between border-b border-main py-5 text-main"
+              >
+                <h4 class="text-xl font-bold uppercase">
+                  <span class="mr-5">01</span> <span>Innolovo</span>
+                </h4>
+                <svg
+                  class="h-6 w-6 fill-main"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                  />
+                </svg>
+              </li>
+              <li
+                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="text-xl font-light uppercase">
+                  <span class="mr-5">02</span> <span>Twinbru</span>
+                </h4>
+                <svg
+                  class="hidden h-6 w-6 fill-main"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                  />
+                </svg>
+              </li>
+              <li
+                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="text-xl font-light uppercase">
+                  <span class="mr-5">03</span> <span>Beyond Studios</span>
+                </h4>
+                <svg
+                  class="hidden h-6 w-6 fill-main"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                  />
+                </svg>
+              </li>
+              <li
+                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="text-xl font-light uppercase">
+                  <span class="mr-5">04</span> <span>Encounter Stories</span>
+                </h4>
+                <svg
+                  class="hidden h-6 w-6 fill-main"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                  />
+                </svg>
+              </li>
+              <li
+                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="text-xl font-light uppercase">
+                  <span class="mr-5">05</span> <span>Neoplants</span>
+                </h4>
+                <svg
+                  class="hidden h-6 w-6 fill-main"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                  />
+                </svg>
+              </li>
+            </ul>
+            <ul data-control>
+              <li
+                class="group flex cursor-pointer items-center justify-between border-b border-main py-5 text-main"
+              >
+                <h4 class="text-xl font-bold uppercase">
+                  <span class="mr-5">01</span> <span>Innolovo 2</span>
+                </h4>
+                <svg
+                  class="h-6 w-6 fill-main"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                  />
+                </svg>
+              </li>
+              <li
+                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="text-xl font-light uppercase">
+                  <span class="mr-5">02</span> <span>Twinbru</span>
+                </h4>
+                <svg
+                  class="hidden h-6 w-6 fill-main"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                  />
+                </svg>
+              </li>
+              <li
+                class="group flex cursor-pointer items-center justify-between border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="text-xl font-light uppercase">
+                  <span class="mr-5">03</span> <span>Beyond Studios</span>
+                </h4>
+                <svg
+                  class="hidden h-6 w-6 fill-main"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M19.291 4H14.9981V3H20.9981V9H19.9981V4.70711L12.8516 11.8536L12.1445 11.1464L19.291 4Z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.5 6C6.67157 6 6 6.67157 6 7.5V16.5C6 17.3284 6.67157 18 7.5 18H16.5C17.3284 18 18 17.3284 18 16.5V12.5C18 12.2239 18.2239 12 18.5 12C18.7761 12 19 12.2239 19 12.5V16.5C19 17.8807 17.8807 19 16.5 19H7.5C6.11929 19 5 17.8807 5 16.5V7.5C5 6.11929 6.11929 5 7.5 5H11.5C11.7761 5 12 5.22386 12 5.5C12 5.77614 11.7761 6 11.5 6H7.5Z"
+                  />
+                </svg>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          data-anim
+          class="relative h-[360px] lg-m:order-2 lg:absolute lg:right-0 lg:top-[130px] lg:h-[600px] lg:w-[550px] xl:w-[700px] 2xl:left-1/2 2xl:right-auto"
+        >
+          <div
+            data-count
+            class="absolute bottom-[30px] left-[30px] z-10 text-xl font-light text-white"
+          >
+            1 / 5
+          </div>
+          <div
+            data-count
+            class="absolute bottom-[30px] left-[30px] z-10 text-xl font-light text-white"
+          >
+            1 / 3
+          </div>
+          <div
+            data-dots
+            class="absolute !left-auto !right-7 !top-7 z-10 flex !transform-none flex-col space-y-[6px] md:!top-auto md:bottom-7"
+          ></div>
+          <div
+            data-dots
+            class="absolute !left-auto !right-7 !top-7 z-10 flex !transform-none flex-col space-y-[6px] md:!top-auto md:bottom-7"
+          ></div>
+          <!-- Slider main container -->
+          <div data-swiper class="h-full w-full">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/slide-1-1.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/image-1.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/image-1.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/image-1.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/image-1.jpg"
+                  alt="image"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Slider main container -->
+          <div data-swiper class="h-full w-full">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/image-1.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/image-1.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/slide-1-1.jpg"
+                  alt="image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-anim-container="stager"
+        class="bg-[url('../image/image-3.jpg')] bg-cover bg-center bg-no-repeat py-12 md:pb-14 md:pt-24"
+      >
+        <div class="container">
+          <p data-anim class="mb-2 text-xl font-light md:mb-5">
+            Реализуем проекты от 60 кв.м
+          </p>
+          <h2 data-anim class="mb-5 md:mb-7">
+            <span class="font-bold">Бесплатная</span> консультация <br />
+            с дизайнером HUDOS
+          </h2>
+          <form
+            data-anim
+            @submit.prevent="store.showModal(2)"
+            class="flex max-w-[380px] flex-col space-y-px"
+          >
+            <div>
+              <input
+                type="text"
+                v-model="store.form.name"
+                placeholder="Ваше имя"
+                required
+                class="w-full bg-white px-5 py-4 outline-none"
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                required
+                v-model="store.form.phone"
+                placeholder="Номер телефона"
+                class="w-full bg-white px-5 py-4 outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+              />
+            </div>
+            <div class="self-end">
+              <button
+                type="submit"
+                class="group flex h-16 w-28 items-center justify-center bg-accent transition-colors hover:bg-accent-light"
+              >
+                <img
+                  class="w-11 group-hover:animate-slide-x"
+                  src="./image/arrow-right.svg"
+                  alt="arrow"
+                />
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section
+        data-anim-container="stager"
+        class="min-h-[875px] py-[80px] md:py-[130px]"
+      >
+        <div
+          class="container relative flex justify-between before:absolute before:left-[45%] before:h-full before:w-px before:bg-gray-light before:opacity-30 md-m:flex-col md-m:before:hidden"
+        >
+          <div data-anim class="md-m:mb-10 md:w-[250px] lg:w-[300px]">
+            <h2 class="mb-4 font-bold md:mb-7">
+              Наши <br class="md-m:hidden" />
+              услуги
+            </h2>
+            <button
+              @click="store.showModal(false)"
+              class="h-[52px] w-full bg-accent transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken sm:w-64 md:mb-40"
+            >
+              Оставить контакт
+            </button>
+            <p class="text-xs md-m:hidden">
+              Документы комплектации: Вместе с визуальной «картинкой»
+              дизайн-проекта выдаются все необходимые документы: спецификация и
+              ведомости отделки. Они будут подтверждением того, что проект – не
+              абстрактная фантазия дизайнера, а на 100% реализуемая концепция.
+              Документация будет включать в себя артикулы и стоимость
+              используемых предметов мебели и аксессуаров, а также точный расчет
+              количества материалов, необходимых для отделки и прокладки
+              инженерных коммуникаций в доме или квартире.
+            </p>
+          </div>
+          <div data-anim class="md:w-[350px] xl:w-[570px]">
+            <div
+              data-trigger="services"
+              class="relative cursor-pointer pb-2 pr-7"
+            >
+              <span
+                data-icon
+                class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
+              ></span>
+              <h4 class="text-xl">Дизайн квартиры</h4>
+              <p class="text-xl font-light">от 15 000 тыс. тенге за кв.м.</p>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all">
+              <ul class="mb-5 text-xl font-light text-gray">
+                <li>Строительные чертежы</li>
+                <li>3D визуализация</li>
+                <li>Планировочное решение</li>
+              </ul>
+              <button
+                @click="store.showModal(1)"
+                class="border border-accent px-2 py-4 text-center leading-tight transition-colors hover:bg-accent hover:text-white active:bg-accent-darken md-m:w-full md:px-7"
+              >
+                Заказать дизайн квартиры
+              </button>
+            </div>
+            <div
+              data-trigger="services"
+              class="relative mt-10 cursor-pointer pb-2 pr-7 md:mt-12"
+            >
+              <span
+                data-icon
+                class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
+              ></span>
+              <h4 class="text-xl">Архитектурный проект дома</h4>
+              <p class="text-xl font-light">от 7 500 тыс. тенге за кв.м.</p>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all">
+              <ul class="mb-5 text-xl font-light text-gray">
+                <li>Комплект чертежей</li>
+                <li>3D визуализация</li>
+                <li>Инженерные сети</li>
+              </ul>
+              <button
+                @click="store.showModal(1)"
+                class="border border-accent px-2 py-4 text-center leading-tight transition-colors hover:bg-accent hover:text-white active:bg-accent-darken md-m:w-full md:px-7"
+              >
+                Заказать архитектурный проект дома
+              </button>
+            </div>
+            <div
+              data-trigger="services"
+              class="relative mt-10 cursor-pointer pb-2 pr-7 md:mt-12"
+            >
+              <span
+                data-icon
+                class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
+              ></span>
+              <h4 class="text-xl">Ремонт под ключ</h4>
+              <p class="text-xl font-light">70000 тыс. тенге за кв.м.</p>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all">
+              <ul class="mb-5 text-xl font-light text-gray">
+                <li>Полный дизайн проект</li>
+                <li>Комплектация проекта</li>
+                <li>Смета на затраты</li>
+                <li>Авторский надзор проекта</li>
+                <li>Ремонтные работы нашей строительной бригады</li>
+              </ul>
+              <button
+                @click="store.showModal(1)"
+                class="border border-accent px-2 py-4 text-center leading-tight transition-colors hover:bg-accent hover:text-white active:bg-accent-darken md-m:w-full md:px-7"
+              >
+                Заказать ремонт под ключ
+              </button>
+            </div>
+            <div
+              data-trigger="services"
+              class="relative mt-10 cursor-pointer pb-2 pr-7 md:mt-12"
+            >
+              <span
+                data-icon
+                class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
+              ></span>
+              <h4 class="text-xl">Авторский надзор</h4>
+              <p class="text-xl font-light">от 200.000 тыс. тенге в месяц.</p>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all">
+              <ul class="mb-5 text-xl font-light text-gray">
+                <li>8 выездов в течении 1 месяца</li>
+              </ul>
+              <button
+                @click="store.showModal(1)"
+                class="border border-accent px-2 py-4 text-center leading-tight transition-colors hover:bg-accent hover:text-white active:bg-accent-darken md-m:w-full md:px-7"
+              >
+                Заказать авторский надзор
+              </button>
+            </div>
+          </div>
+          <p
+            data-anime
+            class="mt-7 border-t border-gray-light border-opacity-30 pt-7 text-xs md:hidden"
+          >
+            Документы комплектации: Вместе с визуальной «картинкой»
+            дизайн-проекта выдаются все необходимые документы: спецификация и
+            ведомости отделки. Они будут подтверждением того, что проект – не
+            абстрактная фантазия дизайнера, а на 100% реализуемая концепция.
+            Документация будет включать в себя артикулы и стоимость используемых
+            предметов мебели и аксессуаров, а также точный расчет количества
+            материалов, необходимых для отделки и прокладки инженерных
+            коммуникаций в доме или квартире.
+          </p>
+        </div>
+      </section>
+      <section
+        data-anim-container="stager"
+        class="relative overflow-hidden pb-[80px] lg-m:flex lg-m:flex-col md:pb-[230px] lg:min-h-[1010px]"
+      >
+        <div
+          data-anim
+          class="relative h-[360px] w-full lg-m:order-2 lg:absolute lg:left-0 lg:top-0 lg:h-[830px] lg:w-[500px] xl:h-[830px] xl:w-[665px] 2xl:left-auto 2xl:right-[52%]"
+        >
+          <div
+            data-count
+            class="absolute left-6 z-10 text-xl font-light text-white lg-m:bottom-6 lg:top-6"
+          >
+            1 / 8
+          </div>
+          <div
+            data-dots
+            class="absolute !bottom-auto !left-auto !right-6 !top-6 z-10 flex !transform-none flex-col space-y-[6px]"
+          ></div>
+          <!-- Slider main container -->
+          <div data-swiper class="h-full w-full">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/slide-2.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/image-1.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/slide-2.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/image-1.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/slide-2.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/image-1.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/slide-2.jpg"
+                  alt="image"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  class="h-full w-full object-cover object-center"
+                  src="./image/image-1.jpg"
+                  alt="image"
+                />
+              </div>
+            </div>
+          </div>
+          <button
+            @click="store.showModal(false)"
+            class="absolute right-0 top-full h-[180px] w-[298px] bg-accent transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken xl-m:hidden xl:left-full"
+          >
+            Заказать проект
+          </button>
+        </div>
+        <div class="container lg-m:order-1">
+          <div class="lg:ml-auto lg:max-w-[40vw] 2xl:max-w-[40%]">
+            <h2 data-anim class="mb-5 font-bold tracking-tight lg:mb-16">
+              Этапы работы над дизайн проектом
+            </h2>
+          </div>
+        </div>
+        <div class="container lg-m:order-3">
+          <div class="lg:ml-auto lg:max-w-[40vw] 2xl:max-w-[40%]">
+            <ul data-anim data-control>
+              <li
+                class="group cursor-pointer border-b border-main py-5 text-main"
+              >
+                <h4 class="flex text-xl font-bold uppercase">
+                  <span class="mr-5">01</span>
+                  <span>Телефонное интервью</span>
+                </h4>
+                <p class="pl-[52px] pt-2 text-xl font-light">
+                  Знакомство. Консультация. При необходимости <br />
+                  выезд на объект.
+                </p>
+              </li>
+              <li
+                class="group cursor-pointer border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="flex text-xl font-light uppercase">
+                  <span class="mr-5">02</span>
+                  <span>Заключение договора</span>
+                </h4>
+                <p class="hidden pl-[52px] pt-2 text-xl font-light">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Debitis, mollitia?
+                </p>
+              </li>
+              <li
+                class="group cursor-pointer border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="flex text-xl font-light uppercase">
+                  <span class="mr-5">03</span> <span>Замеры</span>
+                </h4>
+                <p class="hidden pl-[52px] pt-2 text-xl font-light">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tenetur, repellendus!
+                </p>
+              </li>
+              <li
+                class="group cursor-pointer border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="flex text-xl font-light uppercase">
+                  <span class="mr-5">04</span>
+                  <span>Разработка планировок</span>
+                </h4>
+                <p class="hidden pl-[52px] pt-2 text-xl font-light">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Adipisci, odio.
+                </p>
+              </li>
+              <li
+                class="group cursor-pointer border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="flex text-xl font-light uppercase">
+                  <span class="mr-5">05</span>
+                  <span>Визуализации</span>
+                </h4>
+                <p class="hidden pl-[52px] pt-2 text-xl font-light">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Quos, perspiciatis.
+                </p>
+              </li>
+              <li
+                class="group cursor-pointer border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="flex text-xl font-light uppercase">
+                  <span class="mr-5">06</span>
+                  <span>Разработка рабочей документации</span>
+                </h4>
+                <p class="hidden pl-[52px] pt-2 text-xl font-light">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Tempora, at?
+                </p>
+              </li>
+              <li
+                class="group cursor-pointer border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="flex text-xl font-light uppercase">
+                  <span class="mr-5">07</span>
+                  <span>Авторский надзор</span>
+                </h4>
+                <p class="hidden pl-[52px] pt-2 text-xl font-light">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Earum, natus.
+                </p>
+              </li>
+              <li
+                class="group cursor-pointer border-b border-gray-light py-5 text-gray transition-colors hover:text-main"
+              >
+                <h4 class="flex text-xl font-light uppercase">
+                  <span class="mr-5">08</span>
+                  <span>Сдача готового объекта</span>
+                </h4>
+                <p class="hidden pl-[52px] pt-2 text-xl font-light">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Ducimus, tenetur.
+                </p>
+              </li>
+            </ul>
+            <button
+              data-anim
+              @click="store.showModal(false)"
+              class="h-[180px] w-[calc(100%+2rem)] bg-accent transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken sm-m:-mx-4 sm:w-full xl:hidden"
+            >
+              Заказать проект
+            </button>
+          </div>
+        </div>
+      </section>
+      <section data-anim-container="stager" class="sm-m:overflow-hidden">
+        <div
+          class="container border-b border-gray-light border-opacity-30 pb-[50px] md:pb-[130px]"
+        >
+          <h2 class="mb-2 md:mb-7" data-anim>
+            <span class="font-bold">Бонусы</span> от <br />
+            партнеров
+          </h2>
+          <p data-anim class="mb-5 text-xl md:mb-7">
+            Работая с нами, вы получаете <br />
+            товары по оптовым ценам
+          </p>
+          <div
+            class="flex items-center sm-m:-mr-4 sm-m:overflow-auto sm:grid sm:grid-cols-4 sm:gap-10 lg:gap-32"
+          >
+            <img
+              data-anim
+              class="mr-10 sm-m:w-36"
+              src="./image/benefits-1.png"
+              alt="benefits"
+            />
+            <img
+              data-anim
+              class="mr-10 sm-m:w-36"
+              src="./image/benefits-2.png"
+              alt="benefits"
+            />
+            <img
+              data-anim
+              class="mr-10 sm-m:w-36"
+              src="./image/benefits-3.png"
+              alt="benefits"
+            />
+            <img
+              data-anim
+              class="sm-m:w-36"
+              src="./image/benefits-4.png"
+              alt="benefits"
+            />
+          </div>
+        </div>
+      </section>
+      <section
+        data-anim-container="stager"
+        class="py-[50px] pb-[100px] md:min-h-[785px] md:py-[130px] md:pb-[170px] lg:min-h-[730px]"
+      >
+        <div class="container flex md-m:flex-col md:justify-between">
+          <div class="md:max-w-[280px] lg:max-w-[360px]">
+            <h2 class="font-bold md-m:mb-7" data-anim>
+              Часто задаваемые вопросы
+            </h2>
+          </div>
+          <div
+            data-anim
+            class="md:max-w-[350px] lg:max-w-[400px] xl:max-w-[570px]"
+          >
+            <div
+              data-trigger="questions"
+              class="relative cursor-pointer pb-3 pr-7 md:pb-7"
+            >
+              <span
+                data-icon
+                class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
+              ></span>
+              <h4 class="text-xl font-bold uppercase">
+                Что включает в себя дизайн-проект?
+              </h4>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all">
+              <p class="text-xl">
+                Дизайн-проект состоит из трех основных этапов: 3d-визуализация
+                интерьера, техническая документация и подбор материалов.
+              </p>
+            </div>
+            <div
+              data-trigger="questions"
+              class="relative mt-4 cursor-pointer pb-3 pr-7 md:mt-8 md:pb-7"
+            >
+              <span
+                data-icon
+                class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
+              ></span>
+              <h4 class="text-xl font-bold uppercase">
+                Что такое авторский надзор?
+              </h4>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all">
+              <p class="text-xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                sint voluptas, eligendi cupiditate repellat iure?
+              </p>
+            </div>
+            <div
+              data-trigger="questions"
+              class="relative mt-4 cursor-pointer pb-3 pr-7 md:mt-8 md:pb-7"
+            >
+              <span
+                data-icon
+                class="absolute right-0 top-0 h-7 w-7 before:absolute before:left-1/2 before:top-1/2 before:h-[2px] before:w-4 before:-translate-x-1/2 before:-translate-y-1/2 before:rotate-90 before:rounded-full before:bg-main before:transition-transform after:absolute after:left-1/2 after:top-1/2 after:h-[2px] after:w-4 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main"
+              ></span>
+              <h4 class="text-xl font-bold uppercase">
+                Какое время, в среднем, занимает разработка дизайн-проекта?
+              </h4>
+            </div>
+            <div class="max-h-0 overflow-hidden transition-all">
+              <p class="text-xl">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
+                earum a rem esse nam. Assumenda.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        data-anim-container="stager"
+        class="relative bg-main pt-[190px] md-m:pb-3 md:py-[90px] md:pt-40"
+      >
+        <div class="container relative z-10 md:flex md:justify-between">
+          <div class="md-m:mb-5 md:max-w-[468px]">
+            <p data-anim class="mb-5 text-sm font-light text-white md:text-xl">
+              Акция на 3D проектирование
+            </p>
+            <h2 data-anim class="mb-5 text-white">
+              <span class="font-bold">Стройте сейчас,</span> <br />
+              Платите потом!
+            </h2>
+            <button
+              data-anim
+              @click="store.showModal(false)"
+              class="mb-5 w-full bg-accent p-4 transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken sm:w-64 md:mb-12"
+            >
+              Оставить контакт
+            </button>
+            <div
+              class="flex items-center md-m:-mr-4 md-m:space-x-10 md-m:overflow-x-auto md:grid md:max-w-[430px] md:grid-cols-3 md:gap-10"
+            >
+              <img
+                data-anim
+                class="md-m:w-36"
+                src="./image/sponsor-1.png"
+                alt="sponsor"
+              />
+              <img
+                data-anim
+                class="md-m:w-36"
+                src="./image/sponsor-2.png"
+                alt="sponsor"
+              />
+              <img
+                data-anim
+                class="md-m:w-20"
+                src="./image/sponsor-3.png"
+                alt="sponsor"
+              />
+            </div>
+          </div>
+          <div data-anim class="md-m:text-center md:self-end">
+            <span class="text-xs text-gray"
+              >*Только для граждан Казахстана</span
+            >
+          </div>
+        </div>
+        <div
+          data-anim
+          class="absolute -top-7 right-0 w-[360px] overflow-hidden md-m:h-[190px] md:-top-20 lg:-top-10 lg:w-[450px] xl:w-[705px]"
+        >
+          <img
+            class="relative -right-4 w-full md-m:h-full"
+            src="./image/image-4.jpg"
+            alt="image"
+          />
+        </div>
+      </section>
+    </main>
+    <!-- End Main -->
+
+    <!-- Start Footer -->
+    <footer data-anim-container="stager" class="pt-20 lg:py-[130px]">
+      <div data-anim class="container relative">
+        <div
+          class="flex justify-between lg-m:mb-10 lg-m:flex-wrap lg-m:space-y-10 md-m:flex-col md-m:flex-nowrap lg:items-start"
+        >
+          <div class="shrink-0 lg-m:w-full">
+            <img src="./image/logo.svg" alt="logo" />
+          </div>
+          <div class="md-m:mb-10">
+            <div class="mb-5 text-xl font-light text-gray md:mb-7">Ссылки</div>
+            <ul>
+              <li class="mb-5">
+                <a class="transition-colors hover:text-accent" href="#">
+                  Услуги
+                </a>
+              </li>
+              <li class="mb-5">
+                <a class="transition-colors hover:text-accent" href="#">
+                  Портфолио
+                </a>
+              </li>
+              <li class="mb-5">
+                <a class="transition-colors hover:text-accent" href="#">
+                  Полезная информация
+                </a>
+              </li>
+              <li class="mb-5">
+                <a class="transition-colors hover:text-accent" href="#">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a class="transition-colors hover:text-accent" href="#">
+                  Политика конфиденциальности
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="md-m:mb-10">
+            <div class="mb-5 text-xl font-light text-gray md:mb-7">
+              Для клиентов
+            </div>
+            <ul>
+              <li class="mb-5">
+                <a
+                  href="#"
+                  class="flex items-baseline transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img
+                      class="w-4"
+                      src="./image/location.svg"
+                      alt="location"
+                    />
+                  </div>
+                  <div>
+                    <div>
+                      Алматы, Горный гигант, <br />
+                      дом 55, 3 этаж
+                    </div>
+                    <p class="mt-2 text-gray">
+                      Время работы: с 10:00 до 20:00 <br />
+                      Выходные: воскресенье
+                    </p>
+                  </div>
+                </a>
+              </li>
+              <li class="mb-5">
+                <a
+                  href="tel:+77778092516"
+                  class="flex items-center transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img
+                      class="w-4"
+                      src="./image/phone-footer.svg"
+                      alt="phone"
+                    />
+                  </div>
+                  <div>
+                    <div>+7 (777) 8092516</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@testsite.kz"
+                  class="flex items-center transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img class="w-4" src="./image/mail.png" alt="mail" />
+                  </div>
+                  <div>
+                    <div>info@testsite.kz</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="relative">
+            <div class="mb-5 text-xl font-light text-gray md:mb-7">
+              Для партнеров
+            </div>
+            <ul>
+              <li class="mb-5">
+                <a
+                  href="tel:+77019736006"
+                  class="flex items-center transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img
+                      class="w-4"
+                      src="./image/phone-footer.svg"
+                      alt="phone"
+                    />
+                  </div>
+                  <div>
+                    <div>+7 (701) 9736006</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:info@testsite.kz"
+                  class="flex items-center transition-colors hover:text-accent"
+                >
+                  <div class="mr-3 shrink-0">
+                    <img class="w-4" src="./image/mail.png" alt="mail" />
+                  </div>
+                  <div>
+                    <div>info@testsite.kz</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <button
+              @click="store.showModal(false)"
+              class="absolute top-[calc(100%+32px)] hidden h-[230px] w-[218px] bg-accent transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken lg:block"
+            >
+              Заказать проект
+            </button>
+          </div>
+        </div>
+        <div
+          class="text-gray lg-m:mb-3 lg-m:text-center lg:absolute lg:-bottom-24 lg:z-10"
+        >
+          Copyright © <br class="hidden lg:block" />
+          <span class="lg:text-xs"
+            >2023 Hudos Architects. All rights reserved.</span
+          >
+        </div>
+        <button
+          @click="store.showModal(false)"
+          class="h-[230px] w-[calc(100%+2rem)] bg-accent transition-colors hover:bg-accent-light hover:text-white active:bg-accent-darken sm-m:-mx-4 sm:w-full lg:absolute lg:-bottom-[130px] lg:right-0 lg:hidden lg:w-[218px]"
+        >
+          Заказать проект
+        </button>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Scroll up button -->
+    <a
+      href="#"
+      data-scroll-up
+      class="fixed bottom-10 right-5 -z-10 opacity-0 transition-opacity"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="h-12 w-12 fill-white stroke-accent"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+    </a>
+
+    <!-- Start Modal 1 -->
+    <div
+      @click.self="store.closeModal"
+      :class="['animate-fade-in tall:pt-[30px] tall:!items-start fixed inset-0 left-0 top-0 z-50 h-full w-full justify-center overflow-y-auto bg-main bg-opacity-80 transition-opacity md:items-center md-m:items-end', store.isModalOpen ? 'flex' : 'hidden']"
+    >
+      <div
+        class="relative flex min-h-[620px] w-full animate-slide-in md-m:h-[calc(100vh-60px)] md:max-w-[500px] lg:max-w-[905px]"
+      >
+        <a
+          href="#"
+          @click.prevent="store.closeModal"
+          class="group absolute right-0 top-0 h-16 w-16"
+        >
+          <span
+            class="absolute left-1/2 top-1/2 h-px w-8 -translate-x-1/2 -translate-y-1/2 rotate-45 bg-main opacity-60 transition-opacity group-hover:opacity-100"
+          ></span
+          ><span
+            class="absolute left-1/2 top-1/2 h-px w-8 -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-main opacity-60 transition-opacity group-hover:opacity-100"
+          ></span>
+        </a>
+        <div class="relative flex w-1/2 items-end p-[50px] lg-m:hidden">
+          <div
+            class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 bg-[url('../image/image-1.jpg')] bg-cover bg-center bg-no-repeat brightness-50"
+          ></div>
+          <div
+            class="relative w-full text-[40px] font-bold uppercase leading-tight text-white"
+          >
+            Вы это <br />
+            сделали
+          </div>
+        </div>
+        <!-- Petite Vue  https://github.com/vuejs/petite-vue-->
+        <div
+          class="flex w-full flex-col justify-between bg-bgc sm-m:px-6 sm-m:py-[60px] sm:p-[50px] lg:w-1/2"
+        >
+          <div>
+            <!-- Step-1 -->
+            <div v-if="store.currentStep === store.getStep(1).value">
+              <h4 class="mb-7 text-2xl font-bold uppercase">
+                Какой Проект вам необходим?
+              </h4>
+              <ul class="mb-6">
+                <li
+                  v-for="({id, value, description }, index) in store.projectOptions"
+                  :class="{'mb-6':  index !== store.projectOptions.length - 1}"
+                >
+                  <label
+                    :for="id"
+                    class="group/label relative block cursor-pointer select-none pl-9 text-base sm:text-xl"
+                  >
+                    <input
+                      class="peer absolute cursor-pointer opacity-0"
+                      :id="id"
+                      type="radio"
+                      name="project"
+                      :value="value"
+                      v-model="store.form.project"
+                      @change="store.changeProject"
+                    />
+                    <span
+                      class="absolute left-0 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border border-gray bg-bgc after:absolute after:left-1/2 after:top-1/2 after:h-5 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main after:opacity-0 after:transition-all group-hover/label:border-main peer-checked:border-main peer-checked:after:opacity-100"
+                    ></span>
+                    <span
+                      class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
+                    >
+                      <span>{{value}}</span>
+                      <span class="group relative">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="inline h-6 w-6 text-gray transition-colors group-hover:text-accent"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+                          />
+                        </svg>
+                        <span
+                          class="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-40 -translate-x-1/2 rounded border border-accent bg-bgc px-4 py-[6px] text-center text-sm opacity-0 transition-opacity group-hover:opacity-100"
+                        >
+                          <span
+                            class="absolute -top-1 left-1/2 -z-10 h-2 w-2 -translate-x-1/2 rotate-45 rounded-sm border-l border-t border-accent bg-bgc"
+                          ></span>
+                          {{ description }}
+                        </span>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+              </ul>
+              <!-- Errors -->
+              <div class="my-2" v-if="store.isErrors">
+                <p class="text-[red]" v-for="{key, message} in store.errors">
+                  {{ message }}
+                </p>
+              </div>
+              <div>
+                <input
+                  class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none"
+                  type="text"
+                  placeholder="Другой"
+                  :value="store.anotherProject"
+                  @input.lazy="store.changeAnotherOption($event.target.value, 'project', 'anotherProject')"
+                />
+              </div>
+            </div>
+            <!-- Step-2 -->
+            <div v-if="store.currentStep === store.getStep(2).value">
+              <h4 class="mb-7 text-2xl font-bold uppercase">
+                Какой у вас город?
+              </h4>
+              <ul class="mb-6">
+                <li
+                  v-for="({id, value, description }, index) in store.cityOptions"
+                  :class="{'mb-6':  index !== store.cityOptions.length - 1}"
+                >
+                  <label
+                    :for="id"
+                    class="group/label relative block cursor-pointer select-none pl-9 text-base sm:text-xl"
+                  >
+                    <input
+                      class="peer absolute cursor-pointer opacity-0"
+                      :id="id"
+                      type="radio"
+                      name="project"
+                      :value="value"
+                      v-model="store.form.city"
+                      @change="store.changeCity"
+                    />
+                    <span
+                      class="absolute left-0 top-1/2 h-7 w-7 -translate-y-1/2 rounded-full border border-gray bg-bgc after:absolute after:left-1/2 after:top-1/2 after:h-5 after:w-5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-main after:opacity-0 after:transition-all group-hover/label:border-main peer-checked:border-main peer-checked:after:opacity-100"
+                    ></span>
+                    <span
+                      class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
+                    >
+                      <span>{{value}}</span>
+                      <span class="group relative">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          class="inline h-6 w-6 text-gray transition-colors group-hover:text-accent"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"
+                          />
+                        </svg>
+                        <span
+                          class="pointer-events-none absolute left-1/2 top-full z-20 mt-3 w-40 -translate-x-1/2 rounded border border-accent bg-bgc px-4 py-[6px] text-center text-sm opacity-0 transition-opacity group-hover:opacity-100"
+                        >
+                          <span
+                            class="absolute -top-1 left-1/2 -z-10 h-2 w-2 -translate-x-1/2 rotate-45 rounded-sm border-l border-t border-accent bg-bgc"
+                          ></span>
+                          {{ description }}
+                        </span>
+                      </span>
+                    </span>
+                  </label>
+                </li>
+              </ul>
+              <!-- Errors -->
+              <div class="my-2" v-if="store.isErrors">
+                <p class="text-[red]" v-for="{key, message} in store.errors">
+                  {{ message }}
+                </p>
+              </div>
+              <div class="mb-16">
+                <input
+                  class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none"
+                  type="text"
+                  placeholder="Другой"
+                  :value="store.anotherCity"
+                  @input.lazy="store.changeAnotherOption($event.target.value, 'city', 'anotherCity')"
+                />
+              </div>
+              <div>
+                <div class="flex justify-between text-lg font-bold uppercase">
+                  <div>Площадь объекта?</div>
+                  <div>{{store.form.square}}м²</div>
+                </div>
+                <div class="mb-2">
+                  <input
+                    v-model="store.form.square"
+                    type="range"
+                    min="2"
+                    max="1000"
+                    value="100"
+                    class="h-1 w-full appearance-none bg-gray-light opacity-70 outline-none transition-opacity hover:opacity-100 [&::-webkit-slider-thumb]:h-4 [&::-webkit-slider-thumb]:w-4 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-gray [&::-webkit-slider-thumb]:ring-4 [&::-webkit-slider-thumb]:ring-gray-light"
+                  />
+                </div>
+                <div class="flex justify-between font-light">
+                  <span>2м²</span>
+                  <span>1000м²</span>
+                </div>
+              </div>
+            </div>
+            <!-- Step-3 -->
+            <div v-if="store.currentStep === store.getStep(3).value">
+              <div class="mb-6">
+                <div class="mb-4">
+                  <input
+                    class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none"
+                    v-model.trim="store.form.name"
+                    type="text"
+                    placeholder="Ваше имя"
+                    @input="store.clearError"
+                  />
+                </div>
+                <div>
+                  <input
+                    class="w-full border border-gray-light bg-bgc px-5 py-4 outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+                    v-model="store.form.phone"
+                    type="number"
+                    placeholder="Номер телефона"
+                    @input="store.clearError"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="check"
+                  class="group/label relative block cursor-pointer pl-9"
+                >
+                  <input
+                    class="peer absolute cursor-pointer opacity-0"
+                    id="check"
+                    type="checkbox"
+                    v-model="store.check"
+                  />
+                  <span
+                    class="absolute left-px top-1 h-7 w-7 border border-accent after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:text-white after:opacity-0 after:transition-all after:content-['\2713'] peer-checked:bg-accent peer-checked:after:opacity-100"
+                  ></span>
+                  <span
+                    class="font-light text-gray transition-colors group-hover/label:text-main peer-checked:text-main"
+                  >
+                    С положением об обработке персональных данных и Политикой
+                    конфеденциальности ознакомлен и согласен
+                  </span>
+                </label>
+              </div>
+              <!-- Errors -->
+              <div class="my-2" v-if="store.isErrors">
+                <p class="text-[red]" v-for="{key, message} in store.errors">
+                  {{ message }}
+                </p>
+              </div>
+            </div>
+            <!-- Step-4 -->
+            <div v-if="store.currentStep === store.getStep(4).value">
+              <h4 class="mb-7 text-2xl font-bold uppercase">
+                Спасибо за заявку!
+              </h4>
+              <p class="text-sm font-light">
+                Скоро с Вами свяжется наш менеджер.
+              </p>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div
+            class="flex space-x-1"
+            v-if="store.currentStep !== store.getStep(4).value"
+          >
+            <div
+              :class="['h-[52px] w-[52px]', value === store.currentStep ? 'flex-1' : '']"
+              v-for="{value} in store.steps.slice(0, 3)"
+              v-scope="Btn({ value })"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal 1 -->
+
+    <!-- Start Btn component -->
+    <template id="btn-template">
+      <button
+        @click="store.moveStep(value)"
+        :class="['flex items-center justify-center w-full h-full px-4 py-2 transition-all space-x-1', store.getStep(3).value === value &&  store.currentStep === value ? 'bg-main text-white disabled:opacity-30 hover:opacity-90': 'bg-accent disabled:opacity-50 hover:bg-accent-light active:bg-accent-darken']"
+        :disabled="store.currentStep < value || store.getStep(3).value === value && !store.check"
+      >
+        <template
+          v-if="store.currentStep === value && store.getStep(3).value !== value"
+        >
+          <span>Дальше</span>
+          <span>-></span>
+        </template>
+        <template
+          v-else-if="value === store.getStep(3).value && store.currentStep === value"
+        >
+          Отправить
+        </template>
+        <template v-else>{{value}}</template>
+      </button>
+    </template>
+    <!-- End Btn component -->
+    
+  </body>
+</html>
